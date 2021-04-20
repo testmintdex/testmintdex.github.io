@@ -1,0 +1,142 @@
+<style type=text/css>
+.table-condensed{
+  font-size: 15px;
+}
+
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+
+th {
+  height: 30px;
+}
+
+.group {
+  margin-bottom: 20px;
+}
+.group label {
+  font-size: 10px;
+}
+.group2 label {
+  font-size: 12px;
+}
+
+/* this is for placeholder to right justify */
+::-webKit-input-placeholder { /* WebKit browsers */
+    direction: rtl;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    direction: rtl;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ but I'm not sure about working */
+    direction: rtl;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    direction: rtl;
+}
+
+/* This is to reduce margin left and right */
+.container {
+     padding-right: 0; /*15px in bootstrap.css*/
+     padding-left: 0;  /*idem*/
+     margin-right: auto;
+     margin-left: auto;
+}
+
+
+/*
+this version will try to address metamask stop injecting web3 after 16 Nov 2020. using recommendation from the web
+https://ethereum.stackexchange.com/questions/79980/what-does-metamask-mean-by-stop-injecting-web3-js
+
+
+*/
+
+</style>
+
+
+
+<script type=text/javascript src="web3.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
+ 
+
+
+<div class="container-fluid">
+	<br><br>
+<div class="row">	
+    <div class="col-md-1">  
+    </div>	
+	<div class="col-md-8">
+	<h3>MintDex - A true onchain DEX with no centralized server! </h3>
+	MintDex is a true onchain only DEX, with no centralized server needed. You can run the MintDex on your own computer, and thus eliminate the threat of DNS attack or server hack, since there is no server needed. However, to provide user easy access, a hosted version is given here for user easier access on github. 
+	
+	You can download the source and run from your own computer, why? because even at github, hacker can still hack it. The most secure way is to run the software entirely on your own computer. 
+	
+	MintDex is now running on Public Mint testnet.<br><br>
+	
+	<b>Why Public Mint?</b><br>
+	1) For trading to be meaningful, it must be low cost in fee. Public Mint has very low fee for calling contracts.<br><br>
+	
+	Gas Fee for Public Mint Testnet<br>
+Maker Gas Fee     - $0.71<br>
+Taker Gas Fee     - $0.37<br>
+Deposit USD Fee   - $0.07<br>
+Withdraw Token Fee   - $0.11<br><br>
+
+
+	2) Confirmation speed must be fast. Traders can't wait for 5 to 30 minutes to confirm a trade. Public Mint confirmation time is only about 4seconds, a lot faster than Ethereum and make trading meaningful.<br><br>
+	
+	3) Fiat deposit/withdrawal. The blockchain should provide an easy way to deposit and withdraw fiat without the need to go through a centralized exchange, which is risky (many previous hacked on centralized exchanges happened before, hundred of millions of dollars lost). Public Mint provides a very easy method to deposit and withdraw fiat via its fiat native blockchain.<br><br>
+	
+	
+	
+	If you would like to test the MintDex, you need to add a new network.<br>
+	
+	Goto metamask, unlock, then click Networks, click Custom RPC, and use the following settings.<br><br>
+	
+	<b>Settings for metamask</b><br>	
+	1) Network Name:Public Mint Testnet<br>
+	2) New RPC URL: https://rpc.tst.publicmint.io:8545/<br>
+	3) Chain ID: 2019<br>
+	4) Currency Symbol: USD<br>
+	5) Block Explorer URL:https://explorer.tst.publicmint.io/<br><br>
+	
+	
+	After that you need to add a custom token (MINT token)<br>
+	<b>Note this is testnet MINT, it has no real value!</b><br><br>
+	
+	Add Token-> Custom Token<br>
+	Contract Address: 0xf8b10a9527d542ef7Fa32a0f8E556Ab5c050dd6c<br>
+	Token Symbol: MINT<br>
+	Decimals of Precision: 18<br><br>
+	
+	To start trading on MintDex, you need some testnet USD. You can get some free testnet USD from Public Mint admin.<br><br>
+	
+	<b>MintDex v0.8.0</b><br>
+	1) Deposit and withdrawal of USD ok<br>
+	2) Deposit and withdrawal of MINT ok<br>
+	3) Placement of buy and sell order ok<br>
+	4) Trade matching and execution order ok<br>
+	5) Cancel order not working yet (implemented in smart contract but not yet on front end)<br>
+	6) Trading fee not implemented yet (proposed to implement 0.1% of trading fee to support development long term)<br>
+	7) Holding 1000 MINT will give 50% discount on trading fee - not implemented yet.<br><br>
+	
+	You can try MintDex here.<br>
+	<a href="mintdexc.html">MindDex Testnet v0.8.0</a>
+	
+	<br><br><br><br><br><br><br>
+	</div>
+
+
+	
+	
+</div>
+
+
