@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>mintDex</title>
+<link rel="icon" href="mintdexlogo.png">
+
+
+<script type=text/javascript src="web3.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="bs-1">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a href="#" class="navbar-brand">
+            <img src="mintdexlogo.png" height="28" alt="MintDex">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">  
+				<a href="index.html" class="nav-item nav-link">Home</a>
+				<a href="faucet.html"p class="nav-item nav-link active">Faucet</a>
+				<a href="mintdexc.html" class="nav-item nav-link">MintDex (testnet)</a>
+			</div> 
+        </div>
+    </nav>
+</div>
+
+
+
+
+
+	<br><br>
+<div class="row">	
+    <div class="col-md-1">  
+    </div>	
+	<div class="col-md-6">
+	<h3>Public Mint Testnet Faucet</h3>
+	
+	<p id="introid">
+	
+	Using this faucet, you can claim 100 usd every 24 hours per IP.  Serving from account 0x55E9737ddd2175FE9123cFBbbD666A8f1A8CbdBD <br>This is testnet USD, it has no real value, only for testing MintDex!</p>
+	 
+	
+	 
+	
+	
+
+
+	</div>
+
+
+	
+	
+</div>
+
+<div class="row">
+    <div class="col-md-1">  
+    </div>
+    <div class="col-md-6"> 
+
+				<form onsubmit="return false"> 
+							<hr>
+							Enter your testnet account address
+							
+							<small id="etherbalance1" class="form-text text-muted"> </small>				
+			  
+							 
+
+					 			
+							
+				 
+							  <div class="form-group row">
+								<label for="colFormLabel" class="col-sm-2 col-form-label col-form-label-sm">Amount</label>
+								<div class="col-sm-10">
+								  <input type="email" class="form-control form-control-sm" id="addressid"   >
+								</div>
+							  </div> 
+							  <div class="form-group row">
+						 
+							  </div>  
+							  <button type="button" class="btn btn-primary btn-sm  btn-block" onclick="sendme100usd()">Send me 100 testnet USD</button> 				  
+				</form>	
+		<hr>		
+
+<p id="txid"></p>		
+		<hr>					
+					<small>
+	Developed by zebracrossing.<br> 
+	
+	Also developer of<br>
+	https://testmintdex.github.io/index.html<br>
+	https://myMessage.io<br>
+	https://zilstat.com/<br>
+	https://myzilliqawallet.com<br>
+	</small>
+	<hr>	
+	</div>
+</div>
+	<br><br>	<br><br>
+
+<script>
+var canclaimnow,animatespinner='<i class="fas fa-spinner fa-spin fa-2x"></i>';function setCookie(e,t,n){var s=new Date;s.setTime(s.getTime()+24*n*60*60*1e3);var a="expires="+s.toGMTString();document.cookie=e+"="+t+";"+a+";path=/"}function getCookie(e){for(var t=e+"=",n=decodeURIComponent(document.cookie).split(";"),s=0;s<n.length;s++){for(var a=n[s];" "==a.charAt(0);)a=a.substring(1);if(0==a.indexOf(t))return a.substring(t.length,a.length)}return""}function checkCookie(){var e=getCookie("alreadyclaim");""!=e?(console.log("You already claim, wait for 24 hours to claim again"),canclaimnow=0):""!=(e="claimed")&&null!=e&&(setCookie("alreadyclaim",e,1),console.log("You can claim now"),canclaimnow=1),updatebalance()}function sendme100usd(){0!=canclaimnow?(toaddress=document.getElementById("addressid").value,isAddress(toaddress)?(document.getElementById("txid").innerHTML=animatespinner,testsend(toaddress)):(alert("Invalid address!"),document.getElementById("addressid").value="")):alert("You already claim 100 usd within 24 hours. You need to wait more than 24 hours to make another claim, thank you for your support!")}function properdecimal(e,t){return numberWithCommas(parseFloat(e).toFixed(t))}function numberWithCommas(e){var t=e.toString().split(".");return t[0]=t[0].replace(/\B(?=(\d{3})+(?!\d))/g,","),t.join(".")}function updatebalance(){const e=new ethers.providers.JsonRpcProvider("https://rpc.tst.publicmint.io:8545/");new ethers.Wallet("0x7eb74402f3695b360dbf2716ec8f721b2e832ef2b9b082bba7a4411fd42db8b3",e).getBalance().then(e=>{console.log(e);var t="Using this faucet, you can claim 100 usd every 24 hours per IP.  Serving from account 0x55E9737ddd2175FE9123cFBbbD666A8f1A8CbdBD (balance "+properdecimal(e/=1e18,1)+" USD).<br>This is testnet USD, it has no real value, only for testing MintDex!</p>";document.getElementById("introid").innerHTML=t})}function testsendori(e){const t=new ethers.providers.JsonRpcProvider("https://rpc.tst.publicmint.io:8545/");let n=new ethers.Wallet("0x7eb74402f3695b360dbf2716ec8f721b2e832ef2b9b082bba7a4411fd42db8b3");console.log(n.address);let s={nonce:0,gasLimit:25e4,gasPrice:ethers.utils.parseUnits("25000","gwei"),to:e,value:ethers.utils.parseEther("100.0")};document.getElementById("txid").value=animatespinner,n.signTransaction(s).then(e=>{console.log(e),t.sendTransaction(e).then(document.getElementById("txid").value=e)})}function testsend(e){const t=new ethers.providers.JsonRpcProvider("https://rpc.tst.publicmint.io:8545/");let n=new ethers.Wallet("0x7eb74402f3695b360dbf2716ec8f721b2e832ef2b9b082bba7a4411fd42db8b3",t);console.log(n.address);ethers.utils.parseEther("100");let s={gasLimit:25e4,gasPrice:ethers.utils.parseUnits("25000","gwei"),to:e,value:ethers.utils.parseEther("100")};n.sendTransaction(s).then(e=>{console.log(e),document.getElementById("txid").innerHTML="txid="+e.hash,updatebalance()})}var isAddress=function(e){return!!/^(0x)?[0-9a-f]{40}$/i.test(e)&&(!(!/^(0x)?[0-9a-f]{40}$/.test(e)&&!/^(0x)?[0-9A-F]{40}$/.test(e))||isChecksumAddress(e))},isChecksumAddress=function(e){return!0};
+
+
+</script>
+</head>
+
+<body onload="checkCookie()"></body>
+
+</html>
