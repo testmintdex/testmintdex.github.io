@@ -60,12 +60,35 @@ https://ethereum.stackexchange.com/questions/79980/what-does-metamask-mean-by-st
 </style>
 
 
+<html>
+<head>
+<title>mintDex</title>
+<link rel="icon" href="mintdexlogo.png">
 
 <script type=text/javascript src="web3.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   
- 
+
+
+<div class="bs-1">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a href="#" class="navbar-brand">
+            <img src="mintdexlogo.png" height="28" alt="MintDex">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">  
+				<a href="index.html" class="nav-item nav-link active">Home</a>
+				<a href="faucet.html"p class="nav-item nav-link">Faucet</a>
+				<a href="mintdexc.html" class="nav-item nav-link">MintDex (testnet)</a>
+			</div> 
+        </div>
+    </nav>
+</div> 
 
 
 <div class="container-fluid">
@@ -74,7 +97,7 @@ https://ethereum.stackexchange.com/questions/79980/what-does-metamask-mean-by-st
     <div class="col-md-1">  
     </div>	
 	<div class="col-md-8">
-	<h3>MintDex - A true onchain DEX with no centralized server! </h3>
+	<h5>MintDex - A true onchain DEX with no centralized server! </h5>
 	MintDex is a true onchain only DEX, with no centralized server needed. You can run the MintDex on your own computer, and thus eliminate the threat of DNS attack or server hack, since there is no server needed. However, to provide user easy access, a hosted version is given here for user easier access on github. 
 	
 	You can download the source and run from your own computer, why? because even at github, hacker can still hack it. The most secure way is to run the software entirely on your own computer. 
@@ -117,7 +140,7 @@ Withdraw Token Fee   - $0.11<br><br>
 	Token Symbol: MINT<br>
 	Decimals of Precision: 18<br><br>
 	
-	To start trading on MintDex, you need some testnet USD. You can get some free testnet USD from Public Mint admin.<br><br>
+	To start trading on MintDex, you need some testnet USD. You can get some free testnet USD from Public Mint admin or use this <a href="faucet.html">faucet</a>.<br><br>
 	
 	<b>MintDex v0.8.0</b><br>
 	1) Deposit and withdrawal of USD ok<br>
@@ -126,10 +149,12 @@ Withdraw Token Fee   - $0.11<br><br>
 	4) Trade matching and execution order ok<br>
 	5) Cancel order not working yet (implemented in smart contract but not yet on front end)<br>
 	6) Trading fee not implemented yet (proposed to implement 0.1% of trading fee to support development long term)<br>
-	7) Holding 1000 MINT will give 50% discount on trading fee - not implemented yet.<br><br>
+	7) Holding 2000 MINT or above(subjected to change) will give 50% discount on trading fee - not implemented yet.<br><br>
 	
 	You can try MintDex here.<br>
-	<a href="mintdexc.html">MindDex Testnet v0.8.0</a>
+		<a href="mintdexc.html">MindDex Testnet v0.8.0</a><br>
+	<b>DO NOT SEND YOUR ERC20 MINT OR MAINNET MINT TO MintDex, you will risk losing all your MINT!</b>
+
 	
 	<br><br><br><br><br><br><br>
 	</div>
